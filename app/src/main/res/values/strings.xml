@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">PADC-SampleRecycleListView</string>
     <string name="action_settings">Settings</string>
+
+    <string name="txt_news">ရခိုင်ပြည်နယ်၌ သြဂုတ်လနှောင်းပိုင်းတွင် အကြမ်းဖက်ဖြစ်စဉ်များ ဖြစ်ပွားခဲ့ပြီးနောက်  ဘင်္ဂလားဒေ့ရှ်နိုင်ငံသို့  ထွက်ပြေးသွားခဲ့ကြသည့် ဘင်္ဂါလီမွတ်စလင်များအား ပြန်လည်လက်ခံရေးအတွက် ဘင်္ဂလားဒေ့ရှ်နိုင်ငံက နိုင်ငံတကာအကူအညီများရယူကာ အဆမတန်ဖိအားများ ပေးလျက်ရှိသည်။ နှစ်ဦးနှစ်ဖက်ညှိနှိုင်းရာ၌ ပြေလည်ခြင်း မရှိသေးသည့်အချိန် နိုဝင်ဘာ</string>
+    <string name="btn_comment_news">Comment</string>
+    <string name="btn_sent_to_news">Sent To</string>
 </resources>

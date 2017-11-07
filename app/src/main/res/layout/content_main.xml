@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.week2.day1.padc.sfc.activites.NewsListActivity"
-    tools:showIn="@layout/activity_main">
+    tools:showIn="@layout/activity_news_list">
 
     <TextView
         android:layout_width="wrap_content"
