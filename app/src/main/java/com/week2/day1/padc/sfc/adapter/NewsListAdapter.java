@@ -7,25 +7,28 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.week2.day1.padc.sfc.R;
+import com.week2.day1.padc.sfc.delegates.NewsItemDelegate;
 import com.week2.day1.padc.sfc.viewholder.NewsViewHolder;
 
 /**
  * Created by Min Thein Win on 11/4/2017.
  */
 
-public class NewsAdapter extends RecyclerView.Adapter<NewsViewHolder> {
+public class NewsListAdapter extends RecyclerView.Adapter<NewsViewHolder> {
     private Context mContext;
     private LayoutInflater mLayoutInflater;
+    private NewsItemDelegate mNewsItemDelegate;
 
-    public NewsAdapter(Context context) {
+    public NewsListAdapter(Context context, NewsItemDelegate newsItemDelegate) {
         this.mLayoutInflater = LayoutInflater.from(context);
+        this.mNewsItemDelegate = newsItemDelegate;
 
     }
 
     @Override
     public NewsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View newsItemView = mLayoutInflater.inflate(R.layout.view_item_news, parent, false);
-        return new NewsViewHolder(newsItemView);
+        return new NewsViewHolder(newsItemView, mNewsItemDelegate);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.week2.day1.padc.sfc.activites;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,18 +13,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.week2.day1.padc.sfc.R;
-import com.week2.day1.padc.sfc.adapter.NewsAdapter;
+import com.week2.day1.padc.sfc.adapter.NewsListAdapter;
+import com.week2.day1.padc.sfc.delegates.NewsItemDelegate;
 
-public class NewsListActivity extends AppCompatActivity {
-
+public class NewsListActivity extends AppCompatActivity implements NewsItemDelegate {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_list);
-         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-       FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -31,10 +31,11 @@ public class NewsListActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        RecyclerView rvNews=findViewById(R.id.rv_news);
-        rvNews.setLayoutManager(new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.VERTICAL,false));
-        NewsAdapter newsAdapter=new NewsAdapter(getApplicationContext());
-        rvNews.setAdapter(newsAdapter);
+
+        RecyclerView rvNews = findViewById(R.id.rv_news);
+        rvNews.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
+        NewsListAdapter newsListAdapter = new NewsListAdapter(getApplicationContext(), this);
+        rvNews.setAdapter(newsListAdapter);
     }
 
     @Override
@@ -57,5 +58,32 @@ public class NewsListActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onTapComment() {
+
+    }
+
+    @Override
+    public void onTapSendTo() {
+
+    }
+
+    @Override
+    public void onTapFavourite() {
+
+    }
+
+    @Override
+    public void onTapStatistics() {
+
+    }
+
+    @Override
+    public void onTagNews() {
+        Intent intent = NewsDetailsActivity.newIntent(getApplicationContext());
+        startActivity(intent);
+
     }
 }
